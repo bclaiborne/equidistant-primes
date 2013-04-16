@@ -1,7 +1,7 @@
-def prime(a):
+def is_prime(a):
 	return all(a % x for x in range(2, a//2 + 1))
 
-def prime(num):
+def is_prime(num):
 	remainders = (num % x for x in range(2, num // 2 + 1))
 	return all(remainders)
 
