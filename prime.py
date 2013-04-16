@@ -31,11 +31,14 @@ def is_prime(a):
 			return False
 	return True
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 	while True:
-		x = int(input('Enter any integer greater than 1: '))
-
-		for z in reversed(range(1, x//2 +1)):
-			if is_prime(z) and is_prime(x-z):
-				print('The two primes are {0} and {1}'.format(z, x-z))
-		print('Function done')
+		try:
+			x = int(input('Enter any integer greater than 1: '))
+			if not (x > 1):
+				raise ValueError('Number too small')
+			for a, b in primesums(x):
+				print('The two primes are {0} and {1}'.format(a, b))
+		except KeyboardInterrupt, EOFError:
+			print('Goodbye!')
+			break
